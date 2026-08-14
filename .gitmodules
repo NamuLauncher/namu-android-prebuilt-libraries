@@ -54,3 +54,9 @@
 [submodule "MobileGL"]
 	path = renderers/MobileGL/MobileGL
 	url = https://github.com/MobileGL-Dev/MobileGL.git
+[submodule "misc/Dobby/Dobby"]
+	path = misc/Dobby/Dobby
+	url = https://github.com/jmpews/Dobby.git
+[submodule "renderers/SimpleFPEWrapper/SimpleFPEWrapper"]
+	path = renderers/SimpleFPEWrapper/SimpleFPEWrapper
+	url = https://github.com/MobileGL-Dev/SimpleFPEWrapper.git
