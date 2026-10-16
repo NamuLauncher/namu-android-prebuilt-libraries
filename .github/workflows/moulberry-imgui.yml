@@ -1,0 +1,51 @@
+name: Moulberry ImGui natives
+on:
+  push:
+    branches: ["codex/moulberry-natives"]
+  pull_request:
+    paths:
+      - "misc/imgui_moulberry*/**"
+      - "gradle/imgui-native/**"
+      - "tools/package-imgui.py"
+      - ".github/workflows/moulberry-imgui.yml"
+      - "settings.gradle"
+      - "build.gradle"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: imgui-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout pinned ImGui sources
+        run: git submodule update --init --recursive --depth 1 --jobs 4 misc/imgui_moulberry90/source misc/imgui_moulberry92/source
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-35 build-tools;35.0.0 ndk;27.3.13750724 cmake;3.22.1'
+          log-accepted-android-sdk-licenses: false
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build both ImGui versions and ABIs
+        run: ./gradlew -PimguiOnly=true --no-configuration-cache :imgui_moulberry90:assembleRelease :imgui_moulberry92:assembleRelease --stacktrace
+      - name: Verify and package external game libraries
+        run: python3 tools/package-imgui.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: moulberry-imgui-natives
+          path: build/outputs/imgui/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: moulberry-imgui-aars
+          path: |
+            misc/imgui_moulberry90/build/outputs/aar/*-release.aar
+            misc/imgui_moulberry92/build/outputs/aar/*-release.aar
+          if-no-files-found: error
