@@ -12,7 +12,7 @@ python3 tools/package-imgui.py
 
 Copy `build/outputs/imgui/native/<ABI>/*.so` into the game folder's `native/<ABI>/` directory. Both `arm64-v8a` and `x86_64` are included. Distribute the accompanying licenses and build-info.json with the files.
 
-These libraries are external game files; the launcher APK does not need to contain them. The launcher stages them in private storage before loading.
+These libraries are external game files; the launcher APK does not need to contain them. Place the game folder in app-internal storage. The launcher loads `native/<ABI>/*.so` directly without copying it to another directory.
 
 Sources: [ImGui 90](https://github.com/Moulberry/imgui-java/tree/c80552861d5de1c929dbe3210cba8b72792e4471), [ImGui 92](https://github.com/Moulberry/imgui-java/tree/4a2813430cc2bc64ba2106289d0c8606e656f32d).
 

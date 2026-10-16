@@ -13,7 +13,7 @@ native/arm64-v8a/libskiko-linux-arm64.so
 native/x86_64/libskiko-linux-x64.so
 ```
 
-The `linux` filename matches the name expected by the bundled AWT loader running on Android OpenJDK. The binary itself is compiled for Android, not glibc Linux. The namu-android host checks the current game source file and supplies `skiko.library.path` and `amethyst.android.systemTheme` through the generic Amethyst JVM-argument API. The native staging destination is obtained from `AmethystRuntime.gameNativeDirectory(Context)`. Do not disable the affected UI mod.
+The `linux` filename matches the name expected by the bundled AWT loader running on Android OpenJDK. The binary itself is compiled for Android, not glibc Linux. The namu-android host checks the library directly in the current internal game folder and supplies `skiko.library.path` and `amethyst.android.systemTheme` through the generic Amethyst JVM-argument API. The native directory is obtained from `AmethystRuntime.gameNativeDirectory(File gameDirectory)` and is used directly without staging or copying. Do not disable the affected UI mod.
 
 A successful build and JNI declaration match alone do not establish rendering compatibility. Validate Android loading, GL context creation and actual mod UI rendering on a device.
 
