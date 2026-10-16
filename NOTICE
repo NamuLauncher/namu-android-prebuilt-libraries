@@ -3,3 +3,5 @@ This repository preserves source and build history extracted from NamuLauncher/a
 The Amethyst license texts are retained in LICENSES. Individual native components retain their original license notices in misc/imgui_moulberry90/src/main/assets/licenses and misc/imgui_moulberry92/src/main/assets/licenses. See the pinned source submodules for the original authors and full histories. These notices do not relicense third-party components under a single project-wide license.
 
 The Gradle wrapper is copied unchanged from the original prebuilt repository. Its copyright/license headers and embedded notices are retained.
+
+Skiko build scripts and the LGPL-3.0 Android system-theme compatibility bridge were extracted with their history from NamuLauncher/Amethyst-Android (860d45bae). Upstream Skiko and Skia retain their own license notices, which the packaging script includes with the native artifacts.

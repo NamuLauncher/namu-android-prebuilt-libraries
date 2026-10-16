@@ -16,3 +16,5 @@ native/x86_64/libskiko-linux-x64.so
 The `linux` filename matches the name expected by the bundled AWT loader running on Android OpenJDK. The binary itself is compiled for Android, not glibc Linux. The runtime automatically sets `skiko.library.path` to its staged `game-natives/<ABI>` directory when the matching file exists. Do not disable the affected UI mod.
 
 A successful build and JNI declaration match alone do not establish rendering compatibility. Validate Android loading, GL context creation and actual mod UI rendering on a device.
+
+Builds are maintained in [namu-android-prebuilt-libraries](https://github.com/NamuLauncher/namu-android-prebuilt-libraries). See [BUILD.md](../../BUILD.md) for local rebuild commands. The runtime loader remains in Amethyst.

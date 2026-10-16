@@ -3,3 +3,5 @@
 **/.cxx/
 .idea/
 local.properties
+skiko-upstream/
+skiko-native/

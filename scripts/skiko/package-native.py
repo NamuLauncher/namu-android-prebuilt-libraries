@@ -37,7 +37,13 @@ for path in (source / "skiko/dependencies/skia").rglob("*"):
         target = output / "licenses" / path.relative_to(source)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, target)
+repository = pathlib.Path(__file__).resolve().parents[2]
 metadata = {
+    "buildRepository": "https://github.com/NamuLauncher/namu-android-prebuilt-libraries",
+    "buildCommit": subprocess.check_output(
+        ["git", "-C", str(repository), "rev-parse", "HEAD"],
+        text=True,
+    ).strip(),
     "skikoVersion": "0.9.22.2",
     "sourceCommit": "2f621572270c28052549ff4678b762c3fea09fa5",
     "skiaVersion": "m132-a00c390e98-1",
@@ -54,4 +60,12 @@ rebuild = output / "compatibility-source"
 rebuild.mkdir(exist_ok=True)
 for name in ("AndroidSystemTheme.cc", "patch-linker.py", "package-native.py", "README.md"):
     shutil.copyfile(compatibility / name, rebuild / name)
-shutil.copyfile(compatibility.parent.parent / "LICENSE", rebuild / "LICENSE-LGPL-3.0")
+shutil.copyfile(
+    repository / "LICENSES/Amethyst-LGPL-3.0.txt",
+    rebuild / "LICENSE-LGPL-3.0",
+)
+
+shutil.copyfile(
+    repository / "LICENSES/GPL-3.0.txt",
+    rebuild / "LICENSE-GPL-3.0",
+)

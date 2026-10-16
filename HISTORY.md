@@ -25,3 +25,13 @@ The original build integration came from [Amethyst-Android](https://github.com/N
 | `f758008164cdb2e3252c3fe200a5a9f60f4495b1` | `fbd74448a5835a82e1426c58c9db6ae4235d9e3d` |
 | `fd9fd914a5f9071bcc71936604ec64bc70f9219e` | `72534837a206068993c569b05616752b56e69e25` |
 | `fda279b006d194ccea1b0bedbc6a79a16f2a504e` | `f6478925a0e52f76e5cd91425385f64b03c62423` |
+
+## Skiko build history
+
+The `scripts/skiko` directory and its workflow were extracted from [Amethyst-Android](https://github.com/NamuLauncher/Amethyst-Android/tree/860d45bae) and merged without rewriting this repository history. Original authors and commit messages were preserved. Runtime loading and Android theme-property handling remain in Amethyst.
+
+| Original Amethyst commit | Extracted commit |
+| --- | --- |
+| `83ef0ac6043ce2031587fe5bb384dcd7678026e6` | `7582f2db503efdb17c960853e4d0644f832cd4bd` |
+| `afcf36f2f8dfc09ac63a9db41d886768323ddbd9` | `660d6bc8e9399f84deedb30376623ef8c7de7c0b` |
+| `b200b2481bc2b3db741f0baf1de3028443e2e5b1` | `429575e27fc191ac3ca227d94e5110bb6523d4a9` |
