@@ -14,4 +14,4 @@ These libraries are external game files; the launcher APK does not need to conta
 
 Sources: [ImGui 90](https://github.com/Moulberry/imgui-java/tree/c80552861d5de1c929dbe3210cba8b72792e4471), [ImGui 92](https://github.com/Moulberry/imgui-java/tree/4a2813430cc2bc64ba2106289d0c8606e656f32d).
 
-Build scripts and license notices were moved from [AlphaBs/Amethyst-Android](https://github.com/AlphaBs/Amethyst-Android/tree/75e795293825651f860422be1b42a14757a5ebcf). JNI generation and symbol isolation are unchanged. The known ImGui 92 font-buffer lifetime issue is not fixed by this move.
+Build scripts and license notices were moved from [AlphaBs/Amethyst-Android](https://github.com/NamuLauncher/Amethyst-Android/tree/75e795293825651f860422be1b42a14757a5ebcf). JNI generation and symbol isolation are unchanged. The known ImGui 92 font-buffer lifetime issue is not fixed by this move.

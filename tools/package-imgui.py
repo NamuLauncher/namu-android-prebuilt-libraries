@@ -16,7 +16,7 @@ output.mkdir(parents=True)
 
 abis = {"arm64-v8a": 183, "x86_64": 62}
 manifest = {
-    "repository": "https://github.com/AlphaBs/amethyst-prebuilt-libraries",
+    "repository": "https://github.com/NamuLauncher/amethyst-prebuilt-libraries",
     "commit": subprocess.check_output(
         ["git", "-C", str(root), "rev-parse", "HEAD"],
         text=True,
