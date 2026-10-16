@@ -1,0 +1,5 @@
+This repository preserves source and build history extracted from NamuLauncher/amethyst-prebuilt-libraries (d951bd29e), with ImGui build scripts originally added in NamuLauncher/Amethyst-Android (75e795293).
+
+The Amethyst license texts are retained in LICENSES. Individual native components retain their original license notices in misc/imgui_moulberry90/src/main/assets/licenses and misc/imgui_moulberry92/src/main/assets/licenses. See the pinned source submodules for the original authors and full histories. These notices do not relicense third-party components under a single project-wide license.
+
+The Gradle wrapper is copied unchanged from the original prebuilt repository. Its copyright/license headers and embedded notices are retained.

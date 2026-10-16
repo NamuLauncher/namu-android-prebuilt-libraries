@@ -1,4 +1,4 @@
-name: Moulberry ImGui natives
+name: Namu Android prebuilt libraries
 on:
   push:
     branches: ["codex/moulberry-natives"]
@@ -34,7 +34,7 @@ jobs:
           log-accepted-android-sdk-licenses: false
       - uses: gradle/actions/setup-gradle@v4
       - name: Build both ImGui versions and ABIs
-        run: ./gradlew -PimguiOnly=true --no-configuration-cache :imgui_moulberry90:assembleRelease :imgui_moulberry92:assembleRelease --stacktrace
+        run: ./gradlew --no-configuration-cache :imgui_moulberry90:assembleRelease :imgui_moulberry92:assembleRelease --stacktrace
       - name: Verify and package external game libraries
         run: python3 tools/package-imgui.py
       - uses: actions/upload-artifact@v4

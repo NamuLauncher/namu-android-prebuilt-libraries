@@ -16,7 +16,7 @@ output.mkdir(parents=True)
 
 abis = {"arm64-v8a": 183, "x86_64": 62}
 manifest = {
-    "repository": "https://github.com/NamuLauncher/amethyst-prebuilt-libraries",
+    "repository": "https://github.com/NamuLauncher/namu-android-prebuilt-libraries",
     "commit": subprocess.check_output(
         ["git", "-C", str(root), "rev-parse", "HEAD"],
         text=True,
@@ -72,5 +72,8 @@ for version in [90, 92]:
     )
 
 (output / "build-info.json").write_text(json.dumps(manifest, indent=2) + "\n")
-shutil.copy2(root / "BUILD-IMGUI.md", output / "BUILD-IMGUI.md")
+shutil.copy2(root / "BUILD.md", output / "BUILD.md")
 print(f"배포 폴더: {output}")
+shutil.copy2(root / "HISTORY.md", output / "HISTORY.md")
+shutil.copy2(root / "NOTICE", output / "NOTICE")
+shutil.copytree(root / "LICENSES", output / "licenses/build-scripts")

@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'namu-android-prebuilt-libraries'
+include ':imgui_moulberry90'
+include ':imgui_moulberry92'
+project(':imgui_moulberry90').projectDir = file('misc/imgui_moulberry90')
+project(':imgui_moulberry92').projectDir = file('misc/imgui_moulberry92')
